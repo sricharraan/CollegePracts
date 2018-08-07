@@ -1,0 +1,95 @@
+<html>
+<body style="background-color: 	#800000">
+	<script type="text/javascript">
+		function check(){
+			var x=document.Registration.t1.value;
+			if(x=="" || (!isNaN(x)))
+			{
+				alert("Please Enter Proper Name!!");
+				document.Registration.t1.focus();
+				document.getElementById("name").value="";
+			}
+			y=document.Registration.t7.value;
+			if(y=="" || (isNan(y) || y.length()!=10))
+			{
+				alert("Please Enter Proper Name!!");
+				document.Registration.t7.focus();
+				document.getElementById("mob").value="";
+			}
+		}
+		function reset()
+		{
+			document.getElementById("name").value="";
+			document.getElementById("mob").value="";
+			document.getElementById("email").value="";
+			document.getElementById("roll").value="";	
+			document.getElementById("year").selectedIndex="0";
+
+		}			
+	</script>
+		<form name="Registration" method="GET" action="" target="_SELF" style="border-style: groove; margin: 50px ;background-color: White" >
+		<h1 style="text-align: center;">Registration Form</h1>
+
+		<br><br><br>
+		<table>
+			<tr>
+				<td style="padding-left: 15px">Enter Name</td>
+				<td><input type="text" name="t1" id="name"></td>
+			</tr>
+			<tr>
+				<td style="padding-left: 15px ;padding-top: 10px;margin:10px">Enter Roll No</td>
+				<td><input type="text" name="t2" id="roll"></td>
+			</tr>
+			<tr>
+				<td style="padding-left: 15px ;padding-top: 10px;margin:10px">Enter Year</td>
+				<td><input list="Year" name="t3" id="year" ></td>
+				<datalist id="Year">
+					<option value="Select" selected="selected"></option>
+    				<option value="First Year">
+				    <option value="Second Year">
+ 				    <option value="Third Year">
+				    <option value="Final Year">
+				</datalist>
+			</tr>
+			<tr>
+				<td style="padding-left: 15px ;padding-top: 10px;margin:10px">Gender</td>
+				<td><input type="radio" name="gender" value="Male" id="male">Male</td>
+				<td><input type="radio" name="gender" value="Female" id="female">Female</td>
+			</tr>
+			<tr>
+				<td style="padding-left: 15px ;padding-top: 10px;margin:10px">Languages known</td>
+				<td><input type="checkbox" name="c" id="c">C</td>
+				<td><input type="checkbox" name="c++" id="cp">C++</td>
+				<td><input type="checkbox" name="Java" id="java">Java</td>
+				<td><input type="checkbox" name="Python" id="py">Python</td>
+			</tr>
+			<tr>
+				<td style="padding-left: 15px ;padding-top: 10px;margin:10px">Enter e-mail ID</td>
+				<td><input type="email" name="t6" id="email"></td>
+			</tr>
+			<tr>
+				<td style="padding-left: 15px ;padding-top: 10px;margin:10px">Enter Mobile No.</td>
+				<td><input type="tel" name="t7" id="mob"></td>
+			</tr>
+		</table>
+		<br>
+		<tr>
+			<td style="padding-left: 15px ;padding-top: 10px;margin:10px">
+				<button type="button" onclick=reset()>RESET</button>
+				
+			</td>
+			<td style="padding-left: 15px ;padding-top: 10px;margin:10px">
+				<button type="button" onclick=check()>CHECK</button>
+			</td>
+			<td style="padding-left: 15px ;padding-top: 10px;margin:10px">
+				
+				<button type="button">SUBMIT</button>
+			</td>
+			
+				<br>
+			</tr>
+		
+
+	</form>
+</body>
+</html>
