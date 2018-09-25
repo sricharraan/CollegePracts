@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+<nav>
+ <ul>
+	<li><a href="#" data-p="home">HOME</a></li>
+	<li><a href="#" data-p="downloads">Downloads</a></li>
+	<li><a href="#" data-p="tutorials">Tutorials</a></li>
+ </ul>
+</nav>
+<section id ="main">Hello</section>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+   
+var app ={
+ nav: $('nav ul li a'),
+ content:$('section#main')
+};
+app.putContent = function(content){
+this.content.html(content);
+}
+app.loadPage=function(page){
+$.ajax({
+  url:"page.php",
+  type:'get',
+  cache:true,
+  data:{page:page},
+  success:function(data){
+  app.putContent(data);
+  },
+  error:function()
+  {
+  app.putContent("Sorry could not find");
+  }
+
+});
+
+}
+
+app.init=function(){
+	
+app.nav.on('click',function(){
+
+var page = $(this).data("p");
+console.log(page);
+app.loadPage(page)
+});
+}();
+
+</script>
+</body>
+</html>
