@@ -1,13 +1,6 @@
 #include<stdio.h>
 int send[7]={0},receive[7];
 
-void parityassign()
-{
-send[0]=(send[2]+send[4]+send[6])%2;
-send[1]=(send[2]+send[5]+send[6])%2;
-send[3]=(send[4]+send[5]+send[6])%2;
-}
-
 void paritycheck()
 {
 int e[3],error,i;
@@ -31,6 +24,13 @@ else
   for(i=0;i<7;i++)
    printf("%d",receive[i]);
  }
+}
+
+void parityassign()
+{
+send[0]=(send[2]+send[4]+send[6])%2;
+send[1]=(send[2]+send[5]+send[6])%2;
+send[3]=(send[4]+send[5]+send[6])%2;
 }
 
 void main()
